@@ -1,16 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarot Insight</title>
-  <style>
-    body { margin:0; display:flex; align-items:center; justify-content:center; height:100vh;
-           font-family:system-ui,sans-serif; background:#FAF9F7; color:#1F1E1D; }
-  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Tarot Insight — ไพ่ทาโร่สัญญาณแห่งจักรวาล</title>
+    <script type="module" crossorigin src="/tarot/assets/index-CRwi7Ui6.js"></script>
+    <link rel="stylesheet" crossorigin href="/tarot/assets/index-DsAvN2sG.css">
+  <meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#1D7A85">
+<link rel="icon" href="icon.svg">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0">
+<meta name="b55-app-id" content="tarot">
 </head>
-<body>
-  <p>กำลังเปิด Tarot Insight…</p>
-  <script>location.replace('https://tarot.thinkpowers.com/');</script>
+  <body><div id="root"></div>
+
+<div id="b55gate" style="position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(160deg,#FAF9F7,#F1EDE7);font-family:'IBM Plex Sans Thai',system-ui,sans-serif">
+  <div style="width:380px;max-width:100%;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:34px 30px;text-align:center">
+    <div style="width:52px;height:52px;border-radius:14px;background:#1D7A85;color:#fff;font-size:26px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 14px">T</div>
+    <div id="b55gt" style="font-size:19px;font-weight:700;color:#1F1E1D">เข้าสู่ระบบเพื่อใช้ Tarot Insight — ไพ่ทาโร่</div>
+    <div id="b55gs" style="font-size:13px;color:#6E6B66;margin:6px 0 20px">ยังไม่มีบัญชี? สมัครฟรีด้านล่าง</div>
+    <button id="b55g" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid #E5E2DC;background:#fff;border-radius:10px;padding:11px 0;font-size:14px;font-weight:500;color:#1F1E1D;cursor:pointer;margin-bottom:14px"><svg style="width:17px;height:17px;flex:none;transform:none" width="17" height="17" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3l5.7-5.7C34.1 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C36.9 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg> ดำเนินการต่อด้วย Google</button>
+    
+    <input id="b55n" placeholder="ชื่อของคุณ" style="display:none;width:100%;border:1px solid #E5E2DC;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:10px;outline:none;box-sizing:border-box">
+    <input id="b55e" type="email" placeholder="อีเมล" style="width:100%;border:1px solid #E5E2DC;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:10px;outline:none;box-sizing:border-box">
+    <input id="b55p" type="password" placeholder="รหัสผ่าน" style="width:100%;border:1px solid #E5E2DC;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:10px;outline:none;box-sizing:border-box">
+    <input id="b55c" placeholder="รหัสยืนยัน 6 หลักจากอีเมล" maxlength="6" style="display:none;width:100%;border:1px solid #E5E2DC;border-radius:10px;padding:11px 13px;font-size:14px;margin-bottom:10px;outline:none;box-sizing:border-box">
+    <button id="b55b" style="width:100%;background:#1D7A85;color:#fff;border:none;border-radius:10px;padding:12px 0;font-size:14.5px;font-weight:600;cursor:pointer">เข้าสู่ระบบ</button><div id="b55st" style="font-size:12.5px;color:#6E6B66;margin-top:8px;min-height:16px"></div>
+    <div id="b55err" style="color:#C23A18;font-size:12.5px;min-height:18px;margin-top:8px"></div>
+    <div style="font-size:13px;color:#6E6B66;margin-top:12px"><a id="b55sw" style="color:#1D7A85;font-weight:600;cursor:pointer">สมัครสมาชิก</a></div>
+    <div id="b55rs" style="display:none;font-size:12.5px;color:#6E6B66;margin-top:8px">ไม่ได้รับอีเมล? <a id="b55rsb" style="color:#1D7A85;font-weight:600;cursor:pointer">ส่งรหัสอีกครั้ง</a> · รหัสหมดอายุใน 15 นาที</div>
+    <div style="font-size:11px;color:#B5B0A8;margin-top:16px">powered by base55</div>
+  </div>
+</div>
+<script>
+(function(){
+  var API='https://mplus.thinkpowers.com/api.php';
+  var mode='login', pend='';
+  var g=function(i){return document.getElementById(i)};
+  var _ht=(location.hash||'').match(/b55token=([a-f0-9]{16,})/);
+  if(_ht){ try{history.replaceState(null,'',location.pathname+location.search);}catch(e){} localStorage.setItem('b55user',_ht[1]);localStorage.setItem('b55auth',_ht[1]);if(window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.Preferences)Capacitor.Plugins.Preferences.set({key:'b55token',value:_ht[1]}); var _ge=g('b55gate'); if(_ge)_ge.parentNode.removeChild(_ge); location.reload(); return; }
+  function ui(){
+    g('b55n').style.display = mode==='register'?'block':'none';
+    g('b55c').style.display = mode==='verify'?'block':'none';
+    g('b55e').style.display = mode==='verify'?'none':'block';
+    g('b55p').style.display = mode==='verify'?'none':'block';
+    g('b55b').textContent = mode==='login'?'เข้าสู่ระบบ':(mode==='register'?'สมัครสมาชิก':'ยืนยันรหัส');
+    g('b55sw').textContent = mode==='login'?'สมัครสมาชิก':'กลับไปเข้าสู่ระบบ';
+    g('b55gs').textContent = mode==='verify'?'เราส่งรหัส 6 หลักไปที่อีเมลของคุณแล้ว':(mode==='register'?'สร้างบัญชีใหม่ ใช้ได้กับทุกแอปของ base55':'ยังไม่มีบัญชี? กดสมัครด้านล่าง');
+    g('b55err').textContent='';
+    var rs=g('b55rs'); if(rs) rs.style.display = mode==='verify'?'block':'none';
+  }
+  function post(a,body){
+    return fetch(API+'?a='+a,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+      .then(function(r){return r.json().then(function(d){if(!r.ok||d.ok===false)throw new Error(d.error||'เกิดข้อผิดพลาด');return d;});});
+  }
+  function done(t){localStorage.setItem('b55user',t);localStorage.setItem('b55auth',t);if(window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.Preferences)Capacitor.Plugins.Preferences.set({key:'b55token',value:t});var el=g('b55gate');if(el)el.parentNode.removeChild(el);location.reload();}
+  g('b55b').onclick=function(){
+    var e=g('b55e').value.trim(),p=g('b55p').value;
+    if(mode==='register'){
+      post('register',{email:e,password:p,name:g('b55n').value.trim()}).then(function(d){pend=d.email;mode='verify';ui();if(!d.mailSent)g('b55err').textContent='ส่งอีเมลไม่สำเร็จ — ติดต่อผู้ดูแล';})
+        .catch(function(x){g('b55err').textContent=x.message;});
+    } else if(mode==='verify'){
+      post('verify',{email:pend||e,code:g('b55c').value.trim()}).then(function(d){done(d.token);})
+        .catch(function(x){g('b55err').textContent=x.message;});
+    } else {
+      post('login',{email:e,password:p}).then(function(d){done(d.token);})
+        .catch(function(x){if(x.message.indexOf('ยังไม่ยืนยัน')>-1){pend=e;mode='verify';ui();}g('b55err').textContent=x.message;});
+    }
+  };
+  g('b55sw').onclick=function(){mode=(mode==='login'?'register':'login');ui();};
+  var rsb=g('b55rsb'); if(rsb) rsb.onclick=function(){ if(!pend){g('b55err').textContent='กรอกอีเมลก่อน';return;} rsb.textContent='กำลังส่ง...'; post('resend',{email:pend}).then(function(d){ rsb.textContent='ส่งแล้ว ✓ เช็กอีเมล (ถ้าไม่เจอดูในโฟลเดอร์สแปม)'; }).catch(function(x){ rsb.textContent='ส่งรหัสอีกครั้ง'; g('b55err').textContent=x.message; }); };
+  window.addEventListener('message',function(ev){
+    if(ev.origin==='https://mplus.thinkpowers.com'&&ev.data&&ev.data.b55token)done(ev.data.b55token);
+  });
+  g('b55g').onclick=function(){var _u='https://mplus.thinkpowers.com/glogin.html?return='+encodeURIComponent(location.href.split('#')[0]); if(/Android|iPhone|iPad|iPod|Mobile|Line\//i.test(navigator.userAgent)){location.href=_u;}else{window.open(_u,'b55g','width=480,height=640');}};
+  g('b55p').addEventListener('keydown',function(ev){if(ev.key==='Enter')g('b55b').click();});
+  var t=localStorage.getItem('b55user');
+  if(!t&&window.Capacitor&&Capacitor.Plugins&&Capacitor.Plugins.Preferences){Capacitor.Plugins.Preferences.get({key:'b55token'}).then(function(r){if(r&&r.value){localStorage.setItem('b55user',r.value);localStorage.setItem('b55auth',r.value);location.reload();}});}
+  if(t){
+    var _st=g('b55st'); if(_st)_st.textContent='\u0e01\u0e33\u0e25\u0e31\u0e07\u0e15\u0e23\u0e27\u0e08\u0e2a\u0e2d\u0e1a\u0e01\u0e32\u0e23\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a\u2026';
+    var _try=function(n){
+      fetch(API+'?a=me',{headers:{'X-Auth':t}}).then(function(r){
+        return r.json().then(function(d){return {status:r.status,ok:r.ok&&!!d&&d.ok===true};}).catch(function(){return {status:r.status,ok:false};});
+      }).then(function(res){
+        if(res.ok){var el=g('b55gate');if(el)el.parentNode.removeChild(el);}
+        else if(res.status===401||res.status===403){localStorage.removeItem('b55user');localStorage.removeItem('b55auth');if(_st)_st.textContent='\u0e40\u0e0b\u0e2a\u0e0a\u0e31\u0e19\u0e2b\u0e21\u0e14\u0e2d\u0e32\u0e22\u0e38 \u0e01\u0e23\u0e38\u0e13\u0e32\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a\u0e43\u0e2b\u0e21\u0e48';}
+        else if(n>0){setTimeout(function(){_try(n-1);},1500);}
+        else{var el=g('b55gate');if(el)el.parentNode.removeChild(el);}
+      }).catch(function(){if(n>0){setTimeout(function(){_try(n-1);},1500);}else{var el=g('b55gate');if(el)el.parentNode.removeChild(el);}});
+    };
+    _try(1);
+  }
+})();
+</script>
 </body>
 </html>
