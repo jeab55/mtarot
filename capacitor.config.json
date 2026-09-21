@@ -1,0 +1,10 @@
+{
+  "appId": "com.thinkpowers.mtarot",
+  "appName": "Tarot Insight",
+  "webDir": "www",
+  "androidScheme": "https",
+  "server": {
+    "url": "https://tarot.thinkpowers.com/",
+    "cleartext": false
+  }
+}
