@@ -12,4 +12,8 @@ jobs:
       - uses: android-actions/setup-android@v3
       - run: bash build.sh
       - uses: ncipollo/release-action@v1
-        with: {tag: v1, artifacts: mtarot.apk, allowUpdates: true, token: ${{ secrets.GITHUB_TOKEN }}}
+        with:
+          tag: v1
+          artifacts: mtarot.apk
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
