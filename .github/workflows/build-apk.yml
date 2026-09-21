@@ -11,6 +11,10 @@ jobs:
         with: {distribution: temurin, java-version: '17'}
       - uses: android-actions/setup-android@v3
       - run: bash build.sh
+      - if: failure()
+        run: gh issue create -t "APK build failed" -F build.log || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: ncipollo/release-action@v1
         with:
           tag: v1
