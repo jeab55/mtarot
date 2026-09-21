@@ -3,6 +3,20 @@ set -e
 exec > >(tee build.log) 2>&1
 npm install
 npx cap add android
+python3 - <<'PY'
+p = 'android/app/src/main/AndroidManifest.xml'
+s = open(p, encoding='utf-8').read()
+if 'mtarot' not in s:
+    filt = ('<intent-filter><action android:name="android.intent.action.VIEW"/>'
+            '<category android:name="android.intent.category.DEFAULT"/>'
+            '<category android:name="android.intent.category.BROWSABLE"/>'
+            '<data android:scheme="mtarot"/></intent-filter>')
+    s = s.replace('</intent-filter>', '</intent-filter>' + filt, 1)
+    open(p, 'w', encoding='utf-8').write(s)
+    print('manifest patched with mtarot scheme')
+else:
+    print('manifest already has mtarot')
+PY
 sdkmanager "platforms;android-36" "build-tools;36.0.0" >/dev/null || true
 yes | sdkmanager --licenses || true
 cd android
